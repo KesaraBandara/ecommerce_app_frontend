@@ -16,58 +16,20 @@
   </div>
 </template>
 
-<!--<script>-->
-<!--import CategoryBox from '../../components/Category/CategoryBox.vue'-->
-<!--import axios from "axios";-->
-<!--// import CategoryBox from "@/components/Category/CategoryBox.vue";-->
-<!--export default {-->
-<!--  name: "CategoryView",-->
-<!--  components: {CategoryBox},-->
-<!--  data() {-->
-<!--    return {-->
-<!--      baseURL: "*+,-->
-<!--      categories: [],-->
-<!--    };-->
-<!--  },-->
-<!--  methods: {-->
-<!--    async getCategories() {-->
-<!--      await axios-->
-<!--          .get(`${this.baseURL}/category`)-->
-<!--          .then((res) => (this.categories = res.data))-->
-<!--          .catch((err) => console.log(err));-->
-<!--    },-->
-<!--  },-->
-<!--  mounted() {-->
-<!--    this.getCategories();-->
-<!--  },-->
-<!--};-->
-<!--</script>-->
 <script>
 import CategoryBox from '../../components/Category/CategoryBox.vue'
-import axios from "axios";
 
 export default {
-  name: "CategoryView",
-  components: {CategoryBox},
+  name: "CategoryList", // Updated component name
+  props: ["categories"],
+  components: { CategoryBox },
   data() {
     return {
       baseURL: "http://localhost:8083", // Change this to your local API server address
-      categories: [],
     };
   },
-  methods: {
-    async getCategories() {
-      await axios
-          .get(`${this.baseURL}/api/v1/category/`) // Make sure to use the correct API endpoint
-          .then((res) => (this.categories = res.data))
-          .catch((err) => console.log(err));
-    },
-  },
-  mounted() {
-    this.getCategories();
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
-
-
 <style scoped></style>

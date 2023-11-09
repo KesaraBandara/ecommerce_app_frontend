@@ -1,8 +1,9 @@
 <template>
   <div class="card w-100 h-100" style="margin-top: 10px">
     <div class="embed-responsive embed-responsive-16by9">
-      <img class="card-img-top embed-responsive-item" :src="category.imageURL" alt="Card image cap"
-      />
+      <img class="card-img-top embed-responsive-item"
+           :src="category.imageURL"
+           alt="Card image cap"/>
     </div>
     <div class="card-body">
       <h5 class="card-title">{{ category.categoryName }}</h5>

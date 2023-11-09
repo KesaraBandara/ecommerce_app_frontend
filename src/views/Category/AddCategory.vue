@@ -30,69 +30,6 @@
         </div>
     </div>
 </template>
-<!--<script>-->
-
-<!--const axios = require("axios");-->
-<!--const sweetalert = require("sweetalert");-->
-<!--//-->
-<!--// export default {-->
-<!--//     data(){-->
-<!--//         return{-->
-<!--//             categoryName:"",-->
-<!--//             description:"",-->
-<!--//             imageUrl:"",-->
-<!--//-->
-<!--//         }-->
-<!--//     },-->
-<!--//     methods:{-->
-<!--//         addCategory(){-->
-<!--//             console.log(this.categoryName, this.description);-->
-<!--//             const newCategory = {-->
-<!--//                 categoryName: this.categoryName,-->
-<!--//                 description: this.description,-->
-<!--//                 imageUrl: this.imageUrl,-->
-<!--//             };-->
-<!--//           const baseURL = "";-->
-<!--//           axios({-->
-<!--//             method: "post",-->
-<!--//             url: `${baseURL}/category/create`,-->
-<!--//             data: JSON.stringify(newCategory),-->
-<!--//             headers: {-->
-<!--//               "Content-Type": "application/json",-->
-<!--//             },-->
-<!--//           })-->
-<!--//               .then(() => {-->
-<!--//                 sweetalert({-->
-<!--//                   text: "Category added successfully",-->
-<!--//                   icon: "success",-->
-<!--//                 });-->
-<!--//               })-->
-<!--//               .catch((err) => {-->
-<!--//                 console.log(err);-->
-<!--//               });-->
-<!--//         },-->
-<!--//     },-->
-<!--// };-->
-<!--const baseURL = "http://localhost:8080"; // Update the base URL to your local API server-->
-<!--axios({-->
-<!--  method: "post",-->
-<!--  url: `${baseURL}/api/v1/category/create`, // Update the API endpoint as well-->
-<!--  data: JSON.stringify(newCategory),-->
-<!--  headers: {-->
-<!--    "Content-Type": "application/json",-->
-<!--  },-->
-<!--})-->
-<!--    .then(() => {-->
-<!--      sweetalert({-->
-<!--        text: "Category added successfully",-->
-<!--        icon: "success",-->
-<!--      });-->
-<!--    })-->
-<!--    .catch((err) => {-->
-<!--      console.log(err);-->
-<!--    });-->
-
-<!--</script>-->
 
 <script>
 const axios = require("axios");

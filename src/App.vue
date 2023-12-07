@@ -5,13 +5,17 @@
 
 <!--    <router-link to="/about">About</router-link>-->
 <!--  </div>-->
-  <router-view v-if="categories && products"
+  <router-view v-if="categories && products" style="min-height: 60vh"
       :baseURL="baseURL"
       :categories="categories"
       :products="products"
       @fetchData="fetchData"
   >
   </router-view>
+<!--  footer-->
+  <PageFooter/>
+
+
 </template>
 <!--<script>-->
 <!--import Navbar from "./components/Navbar.vue";-->
@@ -48,12 +52,11 @@
 <!--</script>-->
 
 <script>
-// import Navbar from "./components/Navbar.vue";
 import Navbar from "./components/Navbar.vue";
 import axios from 'axios';
+import PageFooter from "@/components/PageFooter.vue";
 export default {
-  // components: {Navbar},
-  components: {Navbar},
+  components: {Navbar, PageFooter},
   data() {
     return {
       baseURL: "http://localhost:8083", // Change this to your local host address

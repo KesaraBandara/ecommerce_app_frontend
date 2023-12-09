@@ -9,6 +9,8 @@ import EditCategory from "@/views/Category/EditCategory.vue";
 import EditProduct from "@/views/Product/EditProduct.vue";
 import ShowDetails from "@/views/Product/ShowDetails.vue";
 import ListProducts from "@/views/Category/ListProducts.vue";
+import UserSignup from "@/views/UserSignup.vue";
+import UserSignIn from "@/views/UserSignIn.vue";
 
 
 const routes = [
@@ -67,6 +69,20 @@ const routes = [
         name: 'ShowDetails',
         component:ShowDetails
     },
+
+// sign up and sign in
+    {
+        path: '/signup',
+        name: 'UserSignup',
+        component: UserSignup
+    },
+// sign In and sign in
+    {
+        path: '/signIn',
+        name: 'UserSignIn',
+        component: UserSignIn
+    },
+
 
 ]
 

@@ -22,6 +22,24 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!--      Search Bar-->
       <form class="form-inline ml-auto mr-auto">
+
+        <!--        dropdown for browse-->
+        <!--        dropdown for account-->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown"></li>
+          <a
+              class="nav-link dropdown-toggle"
+              href="#" id="navbarAccount"
+              data-toggle="dropdown"
+          >
+            Account </a>
+          <div class="dropdown-menu" aria-labelledby="navbarAccount">
+            <router-link :to="{ name : 'UserSignup'}" class="dropdown-item">Sign-up
+            </router-link>
+            <router-link :to="{ name : 'UserSignIn'}" class="dropdown-item">Sign-in
+            </router-link>
+          </div>
+        </ul>
         <div class="input-group">
           <input
               size="100"
@@ -49,7 +67,7 @@
           </div>
         </div>
       </form>
-      <router-link :to="{ name: 'Admin' }"> Admin </router-link>
+<!--      <router-link :to="{ name: 'Admin' }"> Admin </router-link>-->
     </div>
   </nav>
 </template>
@@ -71,5 +89,11 @@ a {
 }
 .navbar{
   margin-bottom: 15px;
+}
+.nav-link{
+
+}
+.dropdown-menu{
+  background-color: #686868;
 }
 </style>

@@ -2,7 +2,6 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <!-- Navbar content -->
     <!--    Logo-->
-<!--    <router-link class="navbar-brand" :to="{ name: 'Home' }">-->
     <router-link :to="{ name: 'home' }">Home</router-link>
 
     <!--      <img id="logo" src="../assets/icon.png" />-->
@@ -34,10 +33,19 @@
           >
             Account </a>
           <div class="dropdown-menu" aria-labelledby="navbarAccount">
-            <router-link :to="{ name : 'UserSignup'}" class="dropdown-item">Sign-up
+
+            <router-link v-if="token" class="dropdown-item" :to="{ name: 'WishList' }"
+            >Wishlist
             </router-link>
-            <router-link :to="{ name : 'UserSignIn'}" class="dropdown-item">Sign-in
+            <router-link v-if="!token" class="dropdown-item" :to="{ name: 'UserSignup' }"
+            >Sign up
             </router-link>
+            <router-link v-if="!token" class="dropdown-item" :to="{ name: 'UserSignIn' }"
+            >Sign in
+            </router-link>
+            <a class="dropdown-item" v-if="token" href="#" @click="signout"
+            >Sign out
+            </a>
           </div>
         </ul>
         <div class="input-group">
@@ -71,9 +79,37 @@
     </div>
   </nav>
 </template>
+<!--<script>-->
+<!--export default {-->
+<!--  name: "NavbarComponents",-->
+<!--  data() {-->
+<!--    return {-->
+<!--      token: null,-->
+<!--    };-->
+<!--  },-->
+<!--  mounted() {-->
+<!--    this.token = localStorage.getItem("token");-->
+<!--  },-->
+<!--};-->
+<!--</script>-->
+
 <script>
 export default {
   name: "NavbarComponents",
+  data() {
+    return {
+      token: null,
+    };
+  },
+  methods: {
+    signout() {
+      localStorage.removeItem("token");
+      this.token = null;
+    },
+  },
+  mounted() {
+    this.token = localStorage.getItem("token");
+  },
 };
 </script>
 

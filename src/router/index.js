@@ -11,6 +11,7 @@ import ShowDetails from "@/views/Product/ShowDetails.vue";
 import ListProducts from "@/views/Category/ListProducts.vue";
 import UserSignup from "@/views/UserSignup.vue";
 import UserSignIn from "@/views/UserSignIn.vue";
+import WishList from "@/views/Product/WishList.vue";
 
 
 const routes = [
@@ -82,6 +83,12 @@ const routes = [
         name: 'UserSignIn',
         component: UserSignIn
     },
+
+    {
+        path: '/wishlist',
+        name: 'WishList',
+        component: WishList
+    }
 
 
 ]

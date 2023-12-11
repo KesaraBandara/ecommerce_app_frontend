@@ -72,8 +72,9 @@ export default {
       };
       await axios
           .post("http://localhost:8083/api/v1/user/signIn", body) // Update the URL
-          .then(() => {
+          .then((res) => {
             this.$router.replace("/");
+            localStorage.setItem("token",res.data.token);
             swal({
               text: "Login successful",
               icon: "success",
